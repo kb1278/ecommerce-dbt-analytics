@@ -1,16 +1,12 @@
-# 📊 Ecommerce dbt Analytics Pipeline
+# 📊 Ecommerce Analytics Pipeline with dbt & DuckDB
 
 ## 🧠 Overview
 
-This project is an **end-to-end analytics engineering pipeline** built using **dbt and DuckDB** on the Olist e-commerce dataset.
+This project demonstrates an end-to-end analytics engineering workflow using **dbt** and **DuckDB** on the Olist Brazilian E-Commerce dataset.
 
-It transforms raw transactional data into structured analytics models using a layered architecture:
+Raw transactional data is transformed into business-ready analytical models through a layered architecture that separates data cleaning, transformation, and reporting logic.
 
-- **Staging layer** (data cleaning & standardisation)
-- **Marts layer** (business-ready metrics)
-- **Analytics models** (revenue and performance insights)
-
-The goal is to demonstrate modern **data transformation workflows using dbt**, following analytics engineering best practices.
+The project showcases modern analytics engineering practices including modular SQL development, dependency management, and reproducible data pipelines.
 
 ---
 
@@ -28,109 +24,142 @@ models/
     └── fct_monthly_revenue.sql
 ```
 
+---
 
 ## ⚙️ Tech Stack
 
-- dbt (Data Build Tool)
-- DuckDB (Analytical database)
-- SQL (Data modelling & transformations)
-- Git & GitHub (Version control)
-- Python (optional dataset handling)
+- dbt
+- DuckDB
+- SQL
+- Git
+- GitHub
 
 ---
 
 ## 📊 Data Source
 
-This project uses the **Olist Brazilian E-Commerce dataset**, which includes:
+This project uses the Olist Brazilian E-Commerce Dataset, containing:
 
-- Orders
-- Customers
-- Payments
-- Products
-- Sellers
+- Customer orders
+- Payment transactions
+- Customer information
+- Product data
+- Seller information
 - Geolocation data
 
 ---
 
 ## 🏗️ Data Architecture
 
-The project follows a **layered dbt architecture**:
+### Staging Layer
 
-### 1. Staging Layer
-Raw tables are cleaned and standardised:
-- Column renaming
-- Data type formatting
-- Basic filtering
+The staging models standardise and prepare raw source data by:
 
-### 2. Mart Layer
-Business-ready models are created:
-- Revenue calculations
-- Monthly revenue trends
-- Order-level analytics
+- Renaming columns
+- Formatting data types
+- Applying basic data cleaning
+- Creating consistent source models
+
+**Models:**
+
+- `stg_orders`
+- `stg_customers`
+- `stg_payments`
+
+### Mart Layer
+
+The mart layer creates business-ready datasets for analysis and reporting.
+
+**Models:**
+
+- `fct_revenue`
+- `fct_monthly_revenue`
+
+These models aggregate transactional data into reusable metrics that can be consumed by BI tools and downstream analytics workflows.
 
 ---
 
-## 📈 Key Metrics Built
+## 📈 Results
 
-- Total Revenue
-- Monthly Revenue Trends
-- Order-level Sales Analysis
-- Customer-level insights
+The pipeline generated business-ready analytical datasets from over **100,000 e-commerce orders**.
+
+### Key Metrics
+
+| Metric | Value |
+|----------|----------:|
+| Total Revenue | 16,008,872 BRL |
+| Peak Revenue Month | November 2017 |
+| Peak Monthly Revenue | 1,194,883 BRL |
+| Highest Monthly Orders | 7,544 |
+| Analysis Period | Sep 2016 – Oct 2018 |
+
+### Business Insights
+
+- Revenue increased significantly throughout 2017 as order volumes grew.
+- November 2017 recorded the highest revenue and order volume.
+- Monthly revenue exceeded 1 million BRL throughout much of 2018.
+- The generated mart models support KPI reporting, trend analysis, and business performance monitoring.
 
 ---
 
-## 🚀 How to Run This Project
+## 🚀 Running the Project
 
-### 1. Install dependencies
+### Install Dependencies
+
+```bash
 pip install dbt-core dbt-duckdb
+```
 
-### 2. Install dbt packages
-dbt deps
+### Run Models
 
-### 3. Run models
+```bash
 dbt run
+```
 
-### 4. Run tests (optional)
+### Run Tests
+
+```bash
 dbt test
+```
 
 ---
 
-## 📁 Example Model
+## 📊 Models Produced
 
-### Staging Model (stg_orders.sql)
+### fct_revenue
 
-select
-    order_id,
-    customer_id,
-    order_status,
-    order_purchase_timestamp
-from read_csv_auto('data/olist_orders_dataset.csv')
+Order-level revenue fact table containing:
 
----
+- Order ID
+- Purchase Timestamp
+- Payment Value
 
-### Mart Model (fct_revenue.sql)
-Calculates total revenue from order payments and aggregates business KPIs.
+### fct_monthly_revenue
+
+Monthly aggregated metrics including:
+
+- Revenue
+- Order Count
+- Revenue Trends
 
 ---
 
 ## 🧠 Key Learnings
 
-- Built modular dbt project (staging → marts)
-- Designed reusable SQL transformation logic
-- Understood dbt dependency graph and workflow
-- Applied analytics engineering best practices
-- Built reproducible data pipeline using DuckDB
+- Built a layered dbt project using staging and mart models.
+- Applied modular SQL transformations for reusable analytics workflows.
+- Developed business-ready fact tables from raw transactional data.
+- Used DuckDB as a lightweight analytical warehouse.
+- Managed model dependencies and pipeline execution using dbt.
+- Implemented version control using Git and GitHub.
 
 ---
 
-## 📌 Future Improvements
+## 📌 Future Enhancements
 
-- Add dbt tests (not null, unique, relationships)
-- Introduce macros for reusable SQL logic
-- Add incremental models for scalability
-- Integrate Power BI / Tableau dashboard layer
-- Deploy using dbt Cloud or orchestration tools
-
----
-
-
+- Add dbt schema tests
+- Implement source freshness checks
+- Create reusable macros
+- Add incremental models
+- Integrate BI dashboards
+- Deploy using dbt Cloud
