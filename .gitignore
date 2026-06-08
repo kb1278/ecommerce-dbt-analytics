@@ -1,4 +1,14 @@
-
+# dbt artifacts
 target/
 dbt_packages/
 logs/
+
+# database file
+*.duckdb
+
+# raw data (VERY IMPORTANT for portfolio)
+data/
+
+# OS / editor files
+.DS_Store
+*.log
