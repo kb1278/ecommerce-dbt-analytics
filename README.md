@@ -33,6 +33,7 @@ models/
 - SQL
 - Git
 - GitHub
+- Python
 
 ---
 
