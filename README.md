@@ -133,8 +133,4 @@ Calculates total revenue from order payments and aggregates business KPIs.
 
 ---
 
-## 👤 Author
 
-K B  
-Junior Data Analyst / Analytics Engineer  
-GitHub: https://github.com/kb1278
