@@ -119,9 +119,8 @@ dbt run
 
 ### Run Tests
 
-```bash
-dbt test
-```
+dbt test (not yet implemented — planned for future enhancement)
+
 
 ---
 
