@@ -16,27 +16,18 @@ The goal is to demonstrate modern **data transformation workflows using dbt**, f
 
 ## 📦 Project Structure
 
+```bash
 models/
-
 ├── staging/
-
 │   ├── stg_orders.sql
-
 │   ├── stg_customers.sql
-
 │   └── stg_payments.sql
-
 │
-
 └── marts/
+    ├── fct_revenue.sql
+    └── fct_monthly_revenue.sql
+```
 
- ├── fct_revenue.sql
-    
- └── fct_monthly_revenue.sql
-
-
-
----
 
 ## ⚙️ Tech Stack
 
