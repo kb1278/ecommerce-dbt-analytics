@@ -18,6 +18,7 @@ The goal is to demonstrate modern **data transformation workflows using dbt**, f
 
 
 models/
+
 ├── staging/
 
 │ ├── stg_orders.sql
