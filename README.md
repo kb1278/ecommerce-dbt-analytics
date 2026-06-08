@@ -30,9 +30,10 @@ models/
 
 └── marts/
 
-    ├── fct_revenue.sql
+ ├── fct_revenue.sql
     
-    └── fct_monthly_revenue.sql
+ └── fct_monthly_revenue.sql
+
 
 
 ---
