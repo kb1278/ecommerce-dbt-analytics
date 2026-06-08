@@ -16,7 +16,9 @@ The goal is to demonstrate modern **data transformation workflows using dbt**, f
 
 ## 📦 Project Structure
 
+
 models/
+
 ├── staging/
 │ ├── stg_orders.sql
 │ ├── stg_customers.sql
@@ -25,6 +27,8 @@ models/
 └── marts/
 ├── fct_revenue.sql
 └── fct_monthly_revenue.sql
+
+
 
 ---
 
