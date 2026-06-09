@@ -2,7 +2,7 @@
 
 ## 🧠 Overview
 
-This project demonstrates an end-to-end analytics engineering workflow using :contentReference[oaicite:0]{index=0} and DuckDB on the Olist Brazilian E-Commerce dataset.
+This project demonstrates an end-to-end analytics engineering workflow using dbt and DuckDB on the Olist Brazilian E-Commerce dataset.
 
 Raw transactional data is transformed into business-ready analytical models through a layered ELT architecture that separates data ingestion, transformation, and analytics.
 
@@ -30,6 +30,7 @@ The project follows modern analytics engineering best practices including modula
 
 ## ⚙️ Tech Stack
 
+- dbt
 - DuckDB
 - SQL
 - Git
@@ -136,14 +137,23 @@ The pipeline generated business-ready analytical datasets from over 100,000 e-co
 
 ## 🚀 Running the Project
 
-Install Dependencies:
+### Install Dependencies
+
+```bash
 pip install dbt-core dbt-duckdb
+```
 
-Run Models:
+### Run Models
+
+```bash
 dbt run
+```
 
-Run Tests:
+### Run Tests
+
+```bash
 dbt test
+```
 
 ---
 
