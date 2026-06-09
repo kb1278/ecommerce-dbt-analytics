@@ -25,6 +25,9 @@ The project follows modern analytics engineering best practices including modula
      └── fct_monthly_revenue.sql
 
 
+---
+
+
 ## ⚙️ Tech Stack
 
 - DuckDB
