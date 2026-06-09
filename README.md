@@ -92,7 +92,7 @@ This project implements automated data validation using dbt tests to ensure data
 |-----------|------------|----------|
 | unique | Primary keys (order_id, customer_id) | Ensures no duplicate records |
 | not_null | Key identifiers | Ensures completeness of critical fields |
-| relationships (planned) | Foreign keys | Ensures referential integrity between models |
+
 
 ### Tested Models
 - stg_orders
