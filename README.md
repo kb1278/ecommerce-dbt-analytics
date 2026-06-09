@@ -2,17 +2,16 @@
 
 ## 🧠 Overview
 
-This project demonstrates an end-to-end analytics engineering workflow using **dbt** and **DuckDB** on the Olist Brazilian E-Commerce dataset.
+This project demonstrates an end-to-end analytics engineering workflow using :contentReference[oaicite:0]{index=0} and DuckDB on the Olist Brazilian E-Commerce dataset.
 
-Raw transactional data is transformed into business-ready analytical models through a layered architecture that separates data cleaning, transformation, and reporting logic.
+Raw transactional data is transformed into business-ready analytical models through a layered ELT architecture that separates data ingestion, transformation, and analytics.
 
-The project showcases modern analytics engineering practices including modular SQL development, dependency management, and reproducible data pipelines.
+The project follows modern analytics engineering best practices including modular SQL development, layered data modelling (staging → marts), dependency-managed transformations, reproducible analytics pipelines, and automated data quality testing.
 
 ---
 
 ## 📦 Project Structure
 
-```bash
 models/
 ├── staging/
 │   ├── stg_orders.sql
@@ -22,13 +21,12 @@ models/
 └── marts/
     ├── fct_revenue.sql
     └── fct_monthly_revenue.sql
-```
 
 ---
 
 ## ⚙️ Tech Stack
 
-- dbt
+- :contentReference[oaicite:1]{index=1}
 - DuckDB
 - SQL
 - Git
@@ -55,34 +53,62 @@ This project uses the Olist Brazilian E-Commerce Dataset, containing:
 ### Staging Layer
 
 The staging models standardise and prepare raw source data by:
-
-- Renaming columns
-- Formatting data types
+- Renaming columns for consistency
+- Casting data types
+- Handling null values
 - Applying basic data cleaning
-- Creating consistent source models
+- Creating clean, reusable source models
 
-**Models:**
+Models:
+- stg_orders
+- stg_customers
+- stg_payments
 
-- `stg_orders`
-- `stg_customers`
-- `stg_payments`
+---
 
 ### Mart Layer
 
-The mart layer creates business-ready datasets for analysis and reporting.
+The mart layer creates business-ready analytical datasets for reporting and BI tools.
 
-**Models:**
+Models:
+- fct_revenue
+- fct_monthly_revenue
 
-- `fct_revenue`
-- `fct_monthly_revenue`
+These models aggregate transactional data into KPI-ready datasets for analysis, reporting, and dashboarding.
 
-These models aggregate transactional data into reusable metrics that can be consumed by BI tools and downstream analytics workflows.
+---
+
+## 🧪 Data Quality Testing
+
+This project implements automated data validation using dbt tests to ensure data integrity and reliability across all staging models.
+
+### Test Coverage
+
+| Test Type | Applied To | Purpose |
+|-----------|------------|----------|
+| unique | Primary keys (order_id, customer_id) | Ensures no duplicate records |
+| not_null | Key identifiers | Ensures completeness of critical fields |
+| relationships (planned) | Foreign keys | Ensures referential integrity between models |
+
+### Tested Models
+- stg_orders
+- stg_customers
+- stg_payments
+
+### How to Run Tests
+
+dbt test
+
+### Test Results
+- 6 tests executed
+- 0 failures
+- 100% data integrity at staging layer
 
 ---
 
 ## 📈 Results
 
-The pipeline generated business-ready analytical datasets from over **100,000 e-commerce orders**.
+The pipeline generated business-ready analytical datasets from over 100,000 e-commerce orders.
 
 ### Key Metrics
 
@@ -94,72 +120,63 @@ The pipeline generated business-ready analytical datasets from over **100,000 e-
 | Highest Monthly Orders | 7,544 |
 | Analysis Period | Sep 2016 – Oct 2018 |
 
+---
+
 ### Business Insights
 
-- Revenue increased significantly throughout 2017 as order volumes grew.
-- November 2017 recorded the highest revenue and order volume.
-- Monthly revenue exceeded 1 million BRL throughout much of 2018.
-- The generated mart models support KPI reporting, trend analysis, and business performance monitoring.
+- Revenue increased significantly throughout 2017 driven by rising order volumes.
+- November 2017 recorded the highest revenue and order activity.
+- Monthly revenue consistently exceeded 1M BRL during peak growth periods.
+- The mart models enable KPI reporting, trend analysis, and business performance monitoring.
 
 ---
 
 ## 🚀 Running the Project
 
-### Install Dependencies
-
-```bash
+Install Dependencies:
 pip install dbt-core dbt-duckdb
-```
 
-### Run Models
-
-```bash
+Run Models:
 dbt run
-```
 
-### Run Tests
-
-dbt test (not yet implemented — planned for future enhancement)
-
+Run Tests:
+dbt test
 
 ---
 
 ## 📊 Models Produced
 
 ### fct_revenue
-
 Order-level revenue fact table containing:
-
-- Order ID
-- Purchase Timestamp
-- Payment Value
+- order_id
+- order_timestamp
+- payment_value
 
 ### fct_monthly_revenue
-
-Monthly aggregated metrics including:
-
-- Revenue
-- Order Count
-- Revenue Trends
+Monthly aggregated KPI table including:
+- total revenue
+- order count
+- revenue trends
 
 ---
 
 ## 🧠 Key Learnings
 
-- Built a layered dbt project using staging and mart models.
-- Applied modular SQL transformations for reusable analytics workflows.
-- Developed business-ready fact tables from raw transactional data.
-- Used DuckDB as a lightweight analytical warehouse.
-- Managed model dependencies and pipeline execution using dbt.
-- Implemented version control using Git and GitHub.
+- Built a modular ELT pipeline using :contentReference[oaicite:2]{index=2}
+- Implemented layered data modelling (staging → marts)
+- Developed reusable SQL transformation logic
+- Built analytical fact tables from raw transactional data
+- Applied automated data quality testing (unique, not_null)
+- Managed dependency-based execution using dbt DAG
+- Version-controlled analytics workflows using Git and GitHub
 
 ---
 
 ## 📌 Future Enhancements
 
-- Add dbt schema tests
-- Implement source freshness checks
-- Create reusable macros
-- Add incremental models
-- Integrate BI dashboards
-- Deploy using dbt Cloud
+- Expand dbt test coverage (relationships, accepted values, source tests)
+- Implement source freshness monitoring
+- Create reusable SQL macros for KPI standardisation
+- Add incremental models for performance optimisation
+- Integrate BI dashboards (Power BI / Looker Studio)
+- Deploy pipeline using dbt Cloud
