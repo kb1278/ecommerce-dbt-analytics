@@ -26,7 +26,6 @@ models/
 
 ## ⚙️ Tech Stack
 
-- :contentReference[oaicite:1]{index=1}
 - DuckDB
 - SQL
 - Git
