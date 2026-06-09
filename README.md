@@ -8,30 +8,22 @@ Raw transactional data is transformed into business-ready analytical models thro
 
 The project follows modern analytics engineering best practices including modular SQL development, layered data modelling (staging → marts), dependency-managed transformations, reproducible analytics pipelines, and automated data quality testing.
 
----
 
+---
 
 ## 📦 Project Structure
 
+ 
+ models/
+ ├── staging/
+ │   ├── stg_orders.sql
+ │   ├── stg_customers.sql
+ │   └── stg_payments.sql
+ │
+ └── marts/
+     ├── fct_revenue.sql
+     └── fct_monthly_revenue.sql
 
-models/
-
-├── staging/
-
-│   ├── stg_orders.sql
-
-│   ├── stg_customers.sql
-
-│   └── stg_payments.sql
-
-│
-
-└── marts/
-
- ├── fct_revenue.sql
- └── fct_monthly_revenue.sql
-
----
 
 ## ⚙️ Tech Stack
 
