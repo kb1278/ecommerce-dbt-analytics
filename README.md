@@ -13,7 +13,7 @@ The project follows modern analytics engineering best practices including modula
 
 ## 📦 Project Structure
 
- 
+ ```text
  models/
  ├── staging/
  │   ├── stg_orders.sql
@@ -23,7 +23,7 @@ The project follows modern analytics engineering best practices including modula
  └── marts/
      ├── fct_revenue.sql
      └── fct_monthly_revenue.sql
-
+```
 
 ---
 
