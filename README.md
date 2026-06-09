@@ -163,7 +163,7 @@ Monthly aggregated KPI table including:
 
 ## 🧠 Key Learnings
 
-- Built a modular ELT pipeline using :contentReference[oaicite:2]{index=2}
+- Built a modular ELT pipeline using dbt
 - Implemented layered data modelling (staging → marts)
 - Developed reusable SQL transformation logic
 - Built analytical fact tables from raw transactional data
