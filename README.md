@@ -15,14 +15,21 @@ The project follows modern analytics engineering best practices including modula
 
 
 models/
+
 ├── staging/
+
 │   ├── stg_orders.sql
+
 │   ├── stg_customers.sql
+
 │   └── stg_payments.sql
+
 │
+
 └── marts/
-    ├── fct_revenue.sql
-    └── fct_monthly_revenue.sql
+
+ ├── fct_revenue.sql
+ └── fct_monthly_revenue.sql
 
 ---
 
