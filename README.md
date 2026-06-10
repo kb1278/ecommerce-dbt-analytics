@@ -1,12 +1,17 @@
-# 📊 Ecommerce Analytics Pipeline with dbt & DuckDB
+# 📊 Ecommerce Analytics Pipeline with dbt & BigQuery
 
 ## 🧠 Overview
 
-This project demonstrates an end-to-end analytics engineering workflow using dbt and DuckDB on the Olist Brazilian E-Commerce dataset.
+This project demonstrates an end-to-end **analytics engineering workflow** using **dbt and Google BigQuery** on the Olist Brazilian E-Commerce dataset.
 
-Raw transactional data is transformed into business-ready analytical models through a layered ELT architecture that separates data ingestion, transformation, and analytics.
+Raw transactional data is transformed into **business-ready analytical models** using a layered ELT architecture that separates data ingestion, transformation, and analytics.
 
-The project follows modern analytics engineering best practices including modular SQL development, layered data modelling (staging → marts), dependency-managed transformations, reproducible analytics pipelines, and automated data quality testing.
+The project follows modern analytics engineering best practices:
+- Modular SQL development
+- Layered data modelling (staging → marts)
+- Dependency-managed transformations (dbt DAG)
+- Reproducible analytics pipelines
+- Automated data quality testing
 
 
 ---
@@ -31,7 +36,7 @@ The project follows modern analytics engineering best practices including modula
 ## ⚙️ Tech Stack
 
 - dbt
-- DuckDB
+- Google BigQuery
 - SQL
 - Git
 - GitHub
@@ -140,7 +145,8 @@ The pipeline generated business-ready analytical datasets from over 100,000 e-co
 ### Install Dependencies
 
 ```bash
-pip install dbt-core dbt-duckdb
+pip install dbt-core dbt-bigquery
+gcloud auth application-default login
 ```
 
 ### Run Models
@@ -175,21 +181,20 @@ Monthly aggregated KPI table including:
 
 ## 🧠 Key Learnings
 
-- Built a modular ELT pipeline using dbt
+- Built a modular ELT pipeline using dbt and BigQuery
 - Implemented layered data modelling (staging → marts)
 - Developed reusable SQL transformation logic
-- Built analytical fact tables from raw transactional data
-- Applied automated data quality testing (unique, not_null)
-- Managed dependency-based execution using dbt DAG
-- Version-controlled analytics workflows using Git and GitHub
+- Built analytics-ready fact tables from raw data
+- Applied automated data quality testing
+- Managed cloud analytics workflows using Git and dbt DAG
 
 ---
 
 ## 📌 Future Enhancements
 
-- Expand dbt test coverage (relationships, accepted values, source tests)
+- Add relationship tests between models
 - Implement source freshness monitoring
-- Create reusable SQL macros for KPI standardisation
+- Build Power BI / Looker Studio dashboard
 - Add incremental models for performance optimisation
-- Integrate BI dashboards (Power BI / Looker Studio)
-- Deploy pipeline using dbt Cloud
+- Expand customer analytics (cohort, LTV)
+- Deploy using dbt Cloud
