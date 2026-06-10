@@ -35,7 +35,7 @@ The project follows modern analytics engineering best practices:
 
 ## ⚙️ Tech Stack
 
-- dbt
+- dbt(Data Build Tool)
 - Google BigQuery
 - SQL
 - Git
@@ -146,7 +146,12 @@ The pipeline generated business-ready analytical datasets from over 100,000 e-co
 
 ```bash
 pip install dbt-core dbt-bigquery
+
+```
+
+```bash
 gcloud auth application-default login
+
 ```
 
 ### Run Models
