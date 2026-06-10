@@ -11,4 +11,5 @@ data/
 
 # OS / editor files
 .DS_Store
-*.log
+*.logNoneType 
+desktop.ini 

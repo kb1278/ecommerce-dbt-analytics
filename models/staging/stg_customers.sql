@@ -3,4 +3,4 @@ select
     customer_unique_id,
     customer_city,
     customer_state
-from read_csv_auto('data/olist_customers_dataset.csv')
+from `dbt-olist-project-499013.raw_olist.customers`

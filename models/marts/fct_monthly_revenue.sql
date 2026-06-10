@@ -1,5 +1,5 @@
 select
-    date_trunc('month', o.order_purchase_timestamp) as month,
+    date_trunc(timestamp(o.order_purchase_timestamp), month) as month,
     sum(p.payment_value) as revenue,
     count(distinct o.order_id) as orders
 from {{ ref('stg_orders') }} o
