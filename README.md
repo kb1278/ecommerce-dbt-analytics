@@ -35,7 +35,7 @@ The project follows modern analytics engineering best practices:
 
 ## ⚙️ Tech Stack
 
-- dbt(Data Build Tool)
+- dbt (Data Build Tool)
 - Google BigQuery
 - SQL
 - Git
