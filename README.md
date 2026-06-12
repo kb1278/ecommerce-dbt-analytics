@@ -145,6 +145,14 @@ The pipeline generated business-ready analytical datasets from over 100,000 e-co
 ### Install Dependencies
 
 ```bash
+git clone https://github.com/kb1278/ecommerce-dbt-analytics.git
+```
+
+```bash
+cd ecommerce-dbt-analytics
+```
+
+```bash
 pip install dbt-core dbt-bigquery
 
 ```
