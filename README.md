@@ -199,7 +199,7 @@ Monthly aggregated KPI table including:
 - Developed reusable SQL transformation logic
 - Built analytics-ready fact tables from raw data
 - Applied automated data quality testing
-- Managed cloud analytics workflows using Git and dbt DAG
+- Built an ELT pipeline in BigQuery using dbt, leveraging Git for version control and dbt’s DAG for model dependencies
 
 ---
 
