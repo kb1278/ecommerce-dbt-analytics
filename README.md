@@ -124,6 +124,10 @@ dbt test
 - 6 tests executed
 - 0 failures
 - 100% data integrity at staging layer
+- 📸 dbt test execution output:
+
+  <img width="1520" height="574" alt="Screenshot 2026-06-12 152824" src="https://github.com/user-attachments/assets/5ae26865-e4c5-4e6f-950f-ccba55e2a7dd" />
+
 
 ---
 
