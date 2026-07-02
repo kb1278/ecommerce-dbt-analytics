@@ -16,6 +16,18 @@ The project follows modern analytics engineering best practices:
 
 ---
 
+## 🔗 dbt DAG (Lineage Graph)
+
+The dbt project uses `ref()`-based dependencies to automatically generate a DAG that ensures correct execution order.
+
+Staging models (`stg_orders`, `stg_payments`, `stg_customers`) feed into mart models (`fct_revenue`, `fct_monthly_revenue`) for KPI reporting and analytics.
+
+<img width="1140" height="631" alt="Screenshot 2026-06-12 152552" src="https://github.com/user-attachments/assets/0bed6fb5-d80a-4465-8784-cef04a50a152" />
+
+
+---
+
+
 ## 📦 Project Structure
 
  ```text
